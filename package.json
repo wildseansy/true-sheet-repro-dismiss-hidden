@@ -6,7 +6,8 @@
   "scripts": {
     "start": "expo start",
     "ios": "expo run:ios",
-    "prebuild": "expo prebuild --platform ios --clean"
+    "prebuild": "expo prebuild --platform ios --clean",
+    "postinstall": "patch-package"
   },
   "dependencies": {
     "@lodev09/react-native-true-sheet": "4.0.0",
@@ -26,6 +27,7 @@
   },
   "devDependencies": {
     "@types/react": "~19.2.14",
+    "patch-package": "^8.0.1",
     "typescript": "~6.0.3"
   }
 }
