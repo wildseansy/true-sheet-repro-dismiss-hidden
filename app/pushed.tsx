@@ -1,18 +1,18 @@
 import { router } from 'expo-router';
-import { Button, StyleSheet, View } from 'react-native';
+import { Button, ScrollView, StyleSheet } from 'react-native';
 
 import { NavStateReadout } from '../components/NavStateReadout';
 
 export default function Pushed() {
   return (
-    <View style={styles.container}>
+    <ScrollView contentInsetAdjustmentBehavior="automatic" contentContainerStyle={styles.content}>
       <Button title="Close sheet via dismissTo('/')" onPress={() => router.dismissTo('/')} />
       <Button title="Back" onPress={() => router.back()} />
       <NavStateReadout />
-    </View>
+    </ScrollView>
   );
 }
 
 const styles = StyleSheet.create({
-  container: { flex: 1, padding: 16, gap: 12, backgroundColor: 'white' },
+  content: { padding: 16, gap: 12 },
 });

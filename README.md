@@ -11,7 +11,7 @@ dismissed.
 app/_layout.tsx            outer native <Stack>: (sheets) + pushed
 app/(sheets)/_layout.tsx   <Sheet> navigator: index (base, anchor) + details (detents ['auto'])
 app/(sheets)/index.tsx     "Open sheet"  -> router.push('/details')
-app/(sheets)/details.tsx   "Push screen" -> router.push('/pushed')
+app/(sheets)/details.tsx   "Push screen" -> router.push('/pushed'), "Close (router.back())"
 app/pushed.tsx             "Close sheet via dismissTo('/')" -> router.dismissTo('/'), "Back"
 ```
 
@@ -38,7 +38,9 @@ npx expo run:ios
 **Actual:** the sheet is presented again over `index`. The readout shows
 `details (closing: true)`, and Metro logs
 `TrueSheet: sheet is already dismissed. No need to dismiss it again.`
-Swiping the sheet down, tapping outside it, or calling `router.back()` does not remove it.
+**Close (router.back())** in the sheet does nothing: the route is already closing, so the
+pop is a no-op. Only a user dismissal (swipe down or tap outside) gets rid of it, because
+that is the first `onDidDismiss` the navigator receives.
 
 ## The fix
 

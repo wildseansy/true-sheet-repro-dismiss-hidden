@@ -6,6 +6,7 @@ export default function Details() {
     <View style={styles.container}>
       <Text style={styles.title}>Sheet (details)</Text>
       <Button title="Push screen" onPress={() => router.push('/pushed')} />
+      <Button title="Close (router.back())" onPress={() => router.back()} />
     </View>
   );
 }
