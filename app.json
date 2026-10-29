@@ -1,0 +1,14 @@
+{
+  "expo": {
+    "name": "TrueSheetRepro",
+    "slug": "true-sheet-repro-dismiss-hidden",
+    "version": "1.0.0",
+    "scheme": "truesheetrepro",
+    "orientation": "portrait",
+    "userInterfaceStyle": "light",
+    "ios": {
+      "bundleIdentifier": "com.example.truesheetrepro"
+    },
+    "plugins": ["expo-router"]
+  }
+}
