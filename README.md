@@ -3,7 +3,7 @@
 Minimal reproduction for `@lodev09/react-native-true-sheet` 4.0.0 on iOS: a sheet route
 closed while its screen is covered by a push on an outer native stack gets stuck with
 `closing: true`. When the screen comes back the sheet is presented again and can't be
-dismissed.
+dismissed from JS.
 
 ## Layout
 
