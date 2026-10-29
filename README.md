@@ -48,9 +48,11 @@ Branch `with-fix` applies the proposed fix to `ios/TrueSheetView.mm` through
 [patch-package](https://github.com/ds300/patch-package)
 (`patches/@lodev09+react-native-true-sheet+4.0.0.patch`, applied on `postinstall`).
 
+To see the bug, check out `main` (stock 4.0.0, no patch). To toggle the fix:
+
 ```sh
-git checkout with-fix
-npm install                     # applies the patch
+git checkout with-fix           # or main for the bug
+rm -rf node_modules && npm install   # applies the patch on with-fix
 npx expo prebuild --platform ios
 npx expo run:ios                # rebuild: the fix is native
 ```
